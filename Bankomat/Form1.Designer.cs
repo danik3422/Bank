@@ -45,7 +45,7 @@
             // 
             // numberOfCard
             // 
-            this.numberOfCard.Location = new System.Drawing.Point(212, 172);
+            this.numberOfCard.Location = new System.Drawing.Point(196, 168);
             this.numberOfCard.Name = "numberOfCard";
             this.numberOfCard.Size = new System.Drawing.Size(349, 20);
             this.numberOfCard.TabIndex = 1;
@@ -53,12 +53,13 @@
             // 
             // btnstart
             // 
-            this.btnstart.Location = new System.Drawing.Point(254, 216);
+            this.btnstart.Location = new System.Drawing.Point(268, 217);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(208, 85);
             this.btnstart.TabIndex = 2;
             this.btnstart.Text = "Wlóż kartę";
             this.btnstart.UseVisualStyleBackColor = true;
+            this.btnstart.Click += new System.EventHandler(this.btnstart_Click);
             // 
             // Bankomat
             // 
