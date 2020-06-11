@@ -36,6 +36,9 @@ namespace Bankomat
 
         private void btnstart_Click(object sender, EventArgs e)
         {
+            Form2 fr2 = new Form2();
+            fr2.Show();
+            Hide();
         }
     }
 }
