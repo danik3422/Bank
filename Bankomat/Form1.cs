@@ -31,8 +31,8 @@ namespace Bankomat
 
         private void numberOfCard_TextChanged(object sender, EventArgs e)
         {
-            numberOfCard.MaxLength = 31;
-        }
+            numberOfCard.MaxLength = 31; 
+        } 
 
         private void btnstart_Click(object sender, EventArgs e)
         {
