@@ -12,7 +12,7 @@ namespace Bankomat
 {
     public partial class Bankomat : Form
     {
-        BankDB db = null;
+        IBankDB db = null;
         public Bankomat()
         {
             CenterToScreen();

@@ -70,8 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankAccount.cs" />
     <Compile Include="BankDB.cs" />
+    <Compile Include="DBUtils.cs" />
+    <Compile Include="IBankDB.cs" />
     <Compile Include="CreditCard.cs" />
     <Compile Include="DataAccessLayer.cs" />
     <Compile Include="Database1DataSet.Designer.cs">

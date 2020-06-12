@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 310);
             this.panel1.TabIndex = 0;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(295, 241);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(74, 47);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "OK";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(23, 243);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(64, 45);
+            this.button12.TabIndex = 13;
+            this.button12.Text = "Wyjmij karte";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -182,40 +202,24 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(135, 28);
+            this.textBox1.MaxLength = 4;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 20);
+            this.textBox1.PasswordChar = 'X';
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(234, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 32);
+            this.label1.Location = new System.Drawing.Point(20, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Podaj PIN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(23, 243);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(64, 45);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "Wyjmij karte";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(295, 241);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(74, 47);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "OK";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Form2
             // 

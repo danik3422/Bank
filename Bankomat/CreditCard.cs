@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Bankomat.DB
 {
-    struct CreditCard
+    public class CreditCard
     {
-        string CardNo { get; }
-        int AccountId { get; }
-        int CustomerId { get; }
-        string CardHolder { get; }
+        public CreditCard(string cardNo, int accountId, int customerId, string cardHolder)
+        {
+            CardNo = cardNo;
+            AccountId = accountId;
+            CustomerId = customerId;
+            CardHolder = cardHolder;
+        }
+
+        public string CardNo { get; private set; }
+        public int AccountId { get; private set; }
+        public int CustomerId { get; private set; }
+        public string CardHolder { get; private set; }
     }
 }
