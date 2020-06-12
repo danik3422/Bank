@@ -10,7 +10,8 @@ namespace Bankomat.DB
     public static class DBUtils
     {
         private const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\App_Data\\Database1.mdf;Integrated Security=True";
-        private const int CARD_NUMER_LENGTH = 6;
+        public const int CARD_NUMER_LENGTH = 6;
+        public const int PIN_LENGTH = 4;
 
 
         public static SqlConnection GetConnection()
@@ -57,7 +58,7 @@ namespace Bankomat.DB
             return command;
         }
 
-        public static SqlCommand CardPinUpdate(CreditCard card, int newPin)
+        public static SqlCommand CardPinUpdate(CreditCard card, string newPin)
         {
             SqlCommand command = new SqlCommand();
             command.CommandText = "UPDATE CreditCards SET PIN = @pin WHERE CardNo = @crd;";
@@ -65,23 +66,38 @@ namespace Bankomat.DB
             command.Parameters.AddWithValue("@pin", newPin);
             return command;
         }
+
         public static bool IsCardNumberValid(string cardNo)
         {
             if (cardNo != null && cardNo.Length == CARD_NUMER_LENGTH)
             {
-                var chars = cardNo.ToCharArray();
-                bool onlyNums = true;
-                foreach (char c in chars)
-                {
-                    if (!char.IsDigit(c))
-                    {
-                        onlyNums = false;
-                        break;
-                    }
-                }
-                return onlyNums;
+                return OnlyDigitChars(cardNo);
             }
             return false;
+        }
+
+        public static bool IsPinValid(string pin)
+        {
+            if (pin != null && pin.Length == PIN_LENGTH)
+            {
+                return OnlyDigitChars(pin);
+            }
+            return false;
+        }
+
+        private static bool OnlyDigitChars(string cardNo)
+        {
+            var chars = cardNo.ToCharArray();
+            bool onlyNums = true;
+            foreach (char c in chars)
+            {
+                if (!char.IsDigit(c))
+                {
+                    onlyNums = false;
+                    break;
+                }
+            }
+            return onlyNums;
         }
 
         public static CreditCard CreateCard(SqlDataReader result)
@@ -93,9 +109,9 @@ namespace Bankomat.DB
             return new CreditCard(CardNo, AccountId, CustomerId, CardHolder);
         }
 
-        public static int GetPin(SqlDataReader result)
+        public static string GetPin(SqlDataReader result)
         {
-            return (int) result["PIN"];
+            return (string) result["PIN"];
         }
 
         public static decimal GetBalance(SqlDataReader result)

@@ -7,13 +7,13 @@ namespace Bankomat.DB {
 
     interface IBankDB
     {
-        CreditCard getCreditCard(string cardNo, int pin);
+        CreditCard getCreditCard(string cardNo, string pin);
 
         decimal getBalance(CreditCard card);
 
         bool payMoney(CreditCard card, decimal amount);
 
-        bool changePin(CreditCard card, int currentPin, int newPin);
+        bool changePin(CreditCard card, string currentPin, string newPin);
 
         bool verifyCardNumber(string cardNo);
     }
