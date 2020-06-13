@@ -209,5 +209,9 @@ namespace Bankomat.DB
             return isValidNumber;
         }
 
+        public CreditCard getCreditCard(string balance)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

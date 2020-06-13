@@ -16,5 +16,6 @@ namespace Bankomat.DB {
         bool changePin(CreditCard card, string currentPin, string newPin);
 
         bool verifyCardNumber(string cardNo);
+        CreditCard getCreditCard(string balance);
     }
 }

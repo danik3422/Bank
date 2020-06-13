@@ -29,9 +29,15 @@ namespace Bankomat
 
         private void back_button_Click(object sender, EventArgs e)
         {
-            var bank = new Bankomat();
-            bank.Show();
-            Hide();
+            
+            DialogResult iExit;
+
+            iExit = MessageBox.Show("Nie zapomnij odebrać karty!", "ATM System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (iExit == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void change_pin_Click(object sender, EventArgs e)
@@ -42,6 +48,10 @@ namespace Bankomat
         private void balance_button_Click(object sender, EventArgs e)
         {
 
+            BalanceForm blf = new BalanceForm();
+            blf.Show();
+            Hide();
+            
         }
 
         private void cash_button_Click(object sender, EventArgs e)
@@ -50,6 +60,16 @@ namespace Bankomat
         }
 
         private void transfer_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
         {
 
         }

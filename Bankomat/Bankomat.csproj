@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BalanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalanceForm.Designer.cs">
+      <DependentUpon>BalanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankDB.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="IBankDB.cs" />
@@ -86,6 +92,12 @@
     <Compile Include="BankomatForm.Designer.cs">
       <DependentUpon>BankomatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PINChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PINChangeForm.Designer.cs">
+      <DependentUpon>PINChangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PinForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +112,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WITHDRAWALForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WITHDRAWALForm.Designer.cs">
+      <DependentUpon>WITHDRAWALForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BalanceForm.resx">
+      <DependentUpon>BalanceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BankomatForm.resx">
       <DependentUpon>BankomatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PINChangeForm.resx">
+      <DependentUpon>PINChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PinForm.resx">
       <DependentUpon>PinForm.cs</DependentUpon>
@@ -117,7 +141,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WITHDRAWALForm.resx">
+      <DependentUpon>WITHDRAWALForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>
@@ -151,6 +179,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\bankomaty_ArticleWithImgDesc2_M.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

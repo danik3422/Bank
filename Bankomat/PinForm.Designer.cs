@@ -50,7 +50,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.ok_button);
-            this.panel1.Controls.Add(this.exit_button);
             this.panel1.Controls.Add(this.clear_button);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
@@ -68,6 +67,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 310);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // ok_button
             // 
@@ -81,11 +81,12 @@
             // 
             // exit_button
             // 
-            this.exit_button.Location = new System.Drawing.Point(23, 243);
+            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit_button.Location = new System.Drawing.Point(698, 387);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(64, 45);
+            this.exit_button.Size = new System.Drawing.Size(94, 62);
             this.exit_button.TabIndex = 13;
-            this.exit_button.Text = "Wyjmij karte";
+            this.exit_button.Text = "Wyjmij Karte";
             this.exit_button.UseVisualStyleBackColor = true;
             this.exit_button.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -213,18 +214,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 31);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(51, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(78, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Podaj PIN";
+            this.label1.Text = "Podaj PIN:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // PinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.exit_button);
             this.Name = "PinForm";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);

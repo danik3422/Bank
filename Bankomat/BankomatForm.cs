@@ -27,13 +27,43 @@ namespace Bankomat
 
         private void btnstart_Click(object sender, EventArgs e)
         {
-            string cardNo = numberOfCard.Text;
-            if (db.verifyCardNumber(cardNo))
+            if (string.IsNullOrEmpty(numberOfCard.Text))
             {
-                PinForm pinForm = new PinForm(cardNo);
-                pinForm.Show();
-                Hide();
+                DialogResult Error;
+
+                Error = MessageBox.Show("Nie wpisałes numeru konta!", "ATM System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                
             }
+            
+            else
+            {
+                string cardNo = numberOfCard.Text;
+                if (db.verifyCardNumber(cardNo))
+                {
+                    PinForm pinForm = new PinForm(cardNo);
+                    pinForm.Show();
+                    Hide();
+                }
+            }
+            
+        }
+
+        private void Bankomat_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numberOfCard_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
