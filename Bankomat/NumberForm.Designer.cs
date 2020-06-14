@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.ok_button = new System.Windows.Forms.Button();
-            this.exit_button = new System.Windows.Forms.Button();
             this.clear_button = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -44,13 +43,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pin_text = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.exit_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.ok_button);
-            this.panel1.Controls.Add(this.exit_button);
             this.panel1.Controls.Add(this.clear_button);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
@@ -64,14 +63,15 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pin_text);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(158, 68);
+            this.panel1.Location = new System.Drawing.Point(155, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 310);
+            this.panel1.Size = new System.Drawing.Size(465, 367);
             this.panel1.TabIndex = 0;
             // 
             // ok_button
             // 
-            this.ok_button.Location = new System.Drawing.Point(295, 241);
+            this.ok_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ok_button.Location = new System.Drawing.Point(282, 299);
             this.ok_button.Name = "ok_button";
             this.ok_button.Size = new System.Drawing.Size(74, 47);
             this.ok_button.TabIndex = 14;
@@ -79,19 +79,10 @@
             this.ok_button.UseVisualStyleBackColor = true;
             this.ok_button.Click += new System.EventHandler(this.ok_Click);
             // 
-            // exit_button
-            // 
-            this.exit_button.Location = new System.Drawing.Point(23, 243);
-            this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(64, 45);
-            this.exit_button.TabIndex = 13;
-            this.exit_button.Text = "Wyjmij karte";
-            this.exit_button.UseVisualStyleBackColor = true;
-            this.exit_button.Click += new System.EventHandler(this.exit_Click);
-            // 
             // clear_button
             // 
-            this.clear_button.Location = new System.Drawing.Point(135, 241);
+            this.clear_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_button.Location = new System.Drawing.Point(122, 299);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(74, 47);
             this.clear_button.TabIndex = 12;
@@ -101,7 +92,8 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(215, 241);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(202, 299);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(74, 47);
             this.button10.TabIndex = 11;
@@ -111,7 +103,8 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(295, 188);
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Location = new System.Drawing.Point(282, 246);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(74, 47);
             this.button9.TabIndex = 10;
@@ -121,7 +114,8 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(215, 188);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.Location = new System.Drawing.Point(202, 246);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(74, 47);
             this.button8.TabIndex = 9;
@@ -131,7 +125,8 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(135, 188);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(122, 246);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(74, 47);
             this.button7.TabIndex = 8;
@@ -141,7 +136,8 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(295, 135);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(282, 193);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(74, 47);
             this.button6.TabIndex = 7;
@@ -151,7 +147,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(215, 135);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(202, 193);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(74, 47);
             this.button5.TabIndex = 6;
@@ -161,7 +158,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(135, 135);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(122, 193);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(74, 47);
             this.button4.TabIndex = 5;
@@ -171,7 +169,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(295, 82);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(282, 140);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 47);
             this.button3.TabIndex = 4;
@@ -181,7 +180,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(215, 82);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(202, 140);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 47);
             this.button2.TabIndex = 3;
@@ -191,7 +191,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(135, 82);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(122, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 47);
             this.button1.TabIndex = 2;
@@ -201,7 +202,7 @@
             // 
             // pin_text
             // 
-            this.pin_text.Location = new System.Drawing.Point(135, 28);
+            this.pin_text.Location = new System.Drawing.Point(122, 86);
             this.pin_text.MaxLength = 4;
             this.pin_text.Name = "pin_text";
             this.pin_text.ReadOnly = true;
@@ -212,20 +213,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 31);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(118, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Podaj PIN";
+            // 
+            // exit_button
+            // 
+            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit_button.Location = new System.Drawing.Point(698, 387);
+            this.exit_button.Name = "exit_button";
+            this.exit_button.Size = new System.Drawing.Size(94, 62);
+            this.exit_button.TabIndex = 13;
+            this.exit_button.Text = "Wyjmij karte";
+            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Click += new System.EventHandler(this.exit_Click);
             // 
             // NumberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.exit_button);
+            this.MaximumSize = new System.Drawing.Size(820, 500);
+            this.MinimumSize = new System.Drawing.Size(820, 500);
             this.Name = "NumberForm";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ATM System - PIN";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

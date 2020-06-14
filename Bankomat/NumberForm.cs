@@ -117,5 +117,8 @@ namespace Bankomat
         {
             Application.Exit();
         }
+
+
+
     }
 }

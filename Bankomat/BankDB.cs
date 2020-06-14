@@ -20,7 +20,7 @@ namespace Bankomat.DB
             }
             if (amount > balance)
             {
-                OnError("Not enough money!");
+                OnError("Za mało pieniędzy na kontie!");
                 return false;
             }
             try
@@ -48,12 +48,12 @@ namespace Bankomat.DB
         {
             if (!IsCorrectPin(card.CardNo, currentPin))
             {
-                OnError("Incorrect Pin!");
+                OnError("Nieprawidłowe hasło!");
                 return false;
             }
             if (!DBUtils.IsPinValid(newPin))
             {
-                OnError("New Pin is invalid");
+                OnError("Nowe hasło nie jest poprawne!");
                 return false;
             }
             try
@@ -100,7 +100,7 @@ namespace Bankomat.DB
                         }
                         else 
                         {
-                            OnError("wrong card");
+                            OnError("Wrong card");
                         }
                     }
                 }
@@ -118,12 +118,12 @@ namespace Bankomat.DB
             CreditCard card = null;
             if (!DBUtils.IsCardNumberValid(cardNo))
             {
-                OnError("Invalid card number!");
+                OnError("Nieprawidłowy numer karty!");
                 return card;
             }
             if (!IsCorrectPin(cardNo, pin))
             {
-                OnError("Incorrect Pin!");
+                OnError("Nieprawidłowy Pin!");
                 return card;
             }
             try
@@ -141,7 +141,7 @@ namespace Bankomat.DB
                         }
                         else
                         {
-                            OnError("wrong card");
+                            OnError("Wrong card!");
                         }
                     }
                 }
@@ -179,7 +179,7 @@ namespace Bankomat.DB
                         }
                         else
                         {
-                            OnError("wrong card");
+                            OnError("Wrong card!");
                         }
                     }
                 }
@@ -196,7 +196,7 @@ namespace Bankomat.DB
         {
             if (!DBUtils.IsCardNumberValid(cardNo))
             {
-                OnError("Invalid card number!");
+                OnError("Nieprawidłowy numer karty!");
                 return false;
             }
             bool isValidNumber = false;
@@ -212,7 +212,7 @@ namespace Bankomat.DB
                         isValidNumber = result.HasRows;
                         if (!isValidNumber)
                         {
-                            OnError("wrong card");
+                            OnError("Wrong card!");
                         }
                     }
                 }

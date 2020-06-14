@@ -72,9 +72,11 @@
             this.Controls.Add(this.btnstart);
             this.Controls.Add(this.numberOfCard);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(820, 500);
+            this.MinimumSize = new System.Drawing.Size(820, 500);
             this.Name = "Bankomat";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ATM System";
             this.Load += new System.EventHandler(this.Bankomat_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

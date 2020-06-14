@@ -39,6 +39,7 @@
             // 
             // balance_button
             // 
+            this.balance_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.balance_button.Location = new System.Drawing.Point(113, 83);
             this.balance_button.Name = "balance_button";
             this.balance_button.Size = new System.Drawing.Size(122, 70);
@@ -49,16 +50,18 @@
             // 
             // cash_button
             // 
+            this.cash_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cash_button.Location = new System.Drawing.Point(544, 83);
             this.cash_button.Name = "cash_button";
             this.cash_button.Size = new System.Drawing.Size(122, 70);
             this.cash_button.TabIndex = 1;
-            this.cash_button.Text = "CASH WITHDRAWAL";
+            this.cash_button.Text = "Wypłata";
             this.cash_button.UseVisualStyleBackColor = true;
             this.cash_button.Click += new System.EventHandler(this.cash_button_Click);
             // 
             // transfer_button
             // 
+            this.transfer_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.transfer_button.Location = new System.Drawing.Point(113, 291);
             this.transfer_button.Name = "transfer_button";
             this.transfer_button.Size = new System.Drawing.Size(122, 70);
@@ -69,6 +72,7 @@
             // 
             // change_pin_button
             // 
+            this.change_pin_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.change_pin_button.Location = new System.Drawing.Point(544, 291);
             this.change_pin_button.Name = "change_pin_button";
             this.change_pin_button.Size = new System.Drawing.Size(122, 70);
@@ -79,7 +83,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exit_button.Location = new System.Drawing.Point(698, 387);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(94, 62);
@@ -110,8 +114,11 @@
             this.Controls.Add(this.transfer_button);
             this.Controls.Add(this.cash_button);
             this.Controls.Add(this.balance_button);
+            this.MaximumSize = new System.Drawing.Size(820, 500);
+            this.MinimumSize = new System.Drawing.Size(820, 500);
             this.Name = "MenuForm";
-            this.Text = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ATM System - Menu";
             this.Load += new System.EventHandler(this.MenuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

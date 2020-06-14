@@ -38,11 +38,11 @@ namespace Bankomat
 
         private void change_pin_Click(object sender, EventArgs e)
         {
-            NumberForm pinForm = new NumberForm("Enter current PIN", "Enter current PIN", DBUtils.PIN_LENGTH, true, (form, currentPin) =>
+            NumberForm pinForm = new NumberForm("Podaj bieżący PIN:", "Podaj bieżący PIN", DBUtils.PIN_LENGTH, true, (form, currentPin) =>
              {
                  if (db.IsCorrectPin(card.CardNo, currentPin))
                  {
-                     NumberForm newPinForm = new NumberForm("Enter new PIN", "Enter new PIN", DBUtils.PIN_LENGTH, true, (newForm, newPin) =>
+                     NumberForm newPinForm = new NumberForm("Wprowadź nowy PIN:", "Wprowadź nowy PIN", DBUtils.PIN_LENGTH, true, (newForm, newPin) =>
                      {
                          if (db.changePin(card, currentPin, newPin))
                          {
@@ -78,11 +78,11 @@ namespace Bankomat
 
         private void transfer_button_Click(object sender, EventArgs e)
         {
-            NumberForm form = new NumberForm("Enter konto", "Enter konto", DBUtils.CARD_NUMER_LENGTH, false, (kontoForm, konto) =>
+            NumberForm form = new NumberForm("Wprowadź numer konta:", "Wprowadź numer konta", DBUtils.CARD_NUMER_LENGTH, false, (kontoForm, konto) =>
             {
                 if (DBUtils.IsCardNumberValid(konto))
                 {
-                    NumberForm form2 = new NumberForm("Enter amount", "Enter amount",9, false, (amountForm, amount) =>
+                    NumberForm form2 = new NumberForm("Podaj kwotę", "Podaj kwotę", 9, false, (amountForm, amount) =>
                      {
                          decimal decimalAmount = -1;
                          decimal.TryParse(amount, out decimalAmount);

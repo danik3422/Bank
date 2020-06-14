@@ -56,11 +56,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 356);
+            this.button1.Location = new System.Drawing.Point(12, 387);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 52);
+            this.button1.Size = new System.Drawing.Size(113, 62);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Wrócić";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -68,12 +68,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(820, 500);
+            this.MinimumSize = new System.Drawing.Size(820, 500);
             this.Name = "BalanceForm";
-            this.Text = "BalanceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ATM System - Stan konta";
             this.Load += new System.EventHandler(this.BalanceForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

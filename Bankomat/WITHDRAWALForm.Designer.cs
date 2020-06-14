@@ -40,6 +40,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(215, 103);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 61);
@@ -50,6 +51,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(215, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 61);
@@ -60,6 +62,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(215, 283);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 61);
@@ -70,6 +73,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(471, 103);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 61);
@@ -80,6 +84,7 @@
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(471, 193);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(121, 61);
@@ -90,6 +95,7 @@
             // 
             // button6
             // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.Location = new System.Drawing.Point(471, 283);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(121, 61);
@@ -100,7 +106,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exit_button.Location = new System.Drawing.Point(698, 387);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(94, 62);
@@ -110,7 +116,7 @@
             // 
             // back_button
             // 
-            this.back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.back_button.Location = new System.Drawing.Point(12, 387);
             this.back_button.Name = "back_button";
             this.back_button.Size = new System.Drawing.Size(113, 62);
@@ -132,8 +138,11 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.MaximumSize = new System.Drawing.Size(820, 500);
+            this.MinimumSize = new System.Drawing.Size(820, 500);
             this.Name = "WITHDRAWALForm";
-            this.Text = "WITHDRAWALForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ATM System - Wypłata";
             this.ResumeLayout(false);
 
         }
