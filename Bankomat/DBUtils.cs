@@ -22,21 +22,21 @@ namespace Bankomat.DB
         public static SqlCommand CreditCardDataQuery(string cardNo)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT CardNo, AccountId, CustomerId, CardHolder FROM CreditCards WHERE CardNo = @crd;";
+            command.CommandText = "SELECT CardNo, AccountId, CustomerId, CardHolder FROM CreditCards Where CardNo = @crd;";
             command.Parameters.AddWithValue("@crd", cardNo);
             return command;
         }
         public static SqlCommand CreditCardNumberQuery(string cardNo)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT CardNo FROM CreditCards WHERE CardNo = @crd;";
+            command.CommandText = "SELECT CardNo FROM CreditCards Where CardNo = @crd;";
             command.Parameters.AddWithValue("@crd", cardNo);
             return command;
         }
         public static SqlCommand CreditCardPinQuery(string cardNo)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT PIN FROM CreditCards WHERE CardNo = @crd;";
+            command.CommandText = "SELECT PIN FROM CreditCards Where CardNo = @crd;";
             command.Parameters.AddWithValue("@crd", cardNo);
             return command;
         }
@@ -44,7 +44,7 @@ namespace Bankomat.DB
         public static SqlCommand BalanceQuery(CreditCard card)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT Balance FROM BankAccounts WHERE AccountId = @acc;";
+            command.CommandText = "SELECT Balance FROM BankAccounts Where AccountId = @acc;";
             command.Parameters.AddWithValue("@acc", card.AccountId);
             return command;
         }
@@ -52,7 +52,7 @@ namespace Bankomat.DB
         public static SqlCommand BalanceUpdate(CreditCard card, decimal newBalance)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "UPDATE BankAccounts SET Balance = @bal WHERE AccountId = @acc;";
+            command.CommandText = "UPDATE BankAccounts SET Balance = @bal Where AccountId = @acc;";
             command.Parameters.AddWithValue("@bal", newBalance);
             command.Parameters.AddWithValue("@acc", card.AccountId);
             return command;
@@ -61,9 +61,11 @@ namespace Bankomat.DB
         public static SqlCommand CardPinUpdate(CreditCard card, string newPin)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "UPDATE CreditCards SET PIN = @pin WHERE CardNo = @crd;";
-            command.Parameters.AddWithValue("@crd", card.CardNo);
+            //command.CommandText = "INSERT INTO CreditCards VALUES ('1234567', '3/3/2003', '4', '1', '234', 'AAA', '1245', 'MC') ;";
+            command.CommandText = "UPDATE CreditCards SET PIN = @pin Where CardNo = @crd;";
             command.Parameters.AddWithValue("@pin", newPin);
+            command.Parameters.AddWithValue("@crd", card.CardNo);
+
             return command;
         }
 

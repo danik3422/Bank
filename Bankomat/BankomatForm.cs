@@ -14,41 +14,31 @@ namespace Bankomat
     {
         private readonly IBankDB db;
 
-        private void OnError(string message)
-        {
-        }
-
         public Bankomat()
         {
-            db = new BankDB(OnError);
+            db = new BankDB();
             CenterToScreen();
             InitializeComponent();
         }
 
         private void btnstart_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(numberOfCard.Text))
+            string cardNo = numberOfCard.Text;
+            if (db.verifyCardNumber(cardNo))
             {
-                DialogResult Error;
-
-                Error = MessageBox.Show("Nie wpisałes numeru konta!", "ATM System", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-                
+                NumberForm pinForm = new NumberForm("Enter PIN", "Enter PIN", DBUtils.PIN_LENGTH, true, (form, pin) =>
+                   {
+                       CreditCard card = db.getCreditCard(cardNo, pin);
+                       if (card != null)
+                       {
+                           MenuForm fr3 = new MenuForm(card);
+                           fr3.Show();
+                           form.Hide();
+                       }
+                   });
+                pinForm.Show();
+                Hide();
             }
-            
-            else
-            {
-                string cardNo = numberOfCard.Text;
-                if (db.verifyCardNumber(cardNo))
-                {
-                    PinForm pinForm = new PinForm(cardNo);
-                    pinForm.Show();
-                    Hide();
-                }
-            }
-            
         }
 
         private void Bankomat_Load(object sender, EventArgs e)

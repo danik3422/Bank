@@ -20,11 +20,7 @@ namespace Bankomat
         {
             InitializeComponent();
             this.card = card;
-            db = new BankDB(OnError);
-        }
-
-        private void OnError(string message)
-        {
+            db = new BankDB();
         }
 
         private void back_button_Click(object sender, EventArgs e)
@@ -42,13 +38,32 @@ namespace Bankomat
 
         private void change_pin_Click(object sender, EventArgs e)
         {
+            NumberForm pinForm = new NumberForm("Enter current PIN", "Enter current PIN", DBUtils.PIN_LENGTH, true, (form, currentPin) =>
+             {
+                 if (db.IsCorrectPin(card.CardNo, currentPin))
+                 {
+                     NumberForm newPinForm = new NumberForm("Enter new PIN", "Enter new PIN", DBUtils.PIN_LENGTH, true, (newForm, newPin) =>
+                     {
+                         if (db.changePin(card, currentPin, newPin))
+                         {
+                             var menuForm = new MenuForm(card);
+                             menuForm.Show();
+                             newForm.Hide();
+                         }
+                     });
+                     newPinForm.Show();
+                     form.Hide();
+                 }
 
+             });
+            pinForm.Show();
+            Hide();
         }
 
         private void balance_button_Click(object sender, EventArgs e)
         {
 
-            BalanceForm blf = new BalanceForm();
+            BalanceForm blf = new BalanceForm(card);
             blf.Show();
             Hide();
             
@@ -56,12 +71,43 @@ namespace Bankomat
 
         private void cash_button_Click(object sender, EventArgs e)
         {
-           
+            var form = new WITHDRAWALForm(card);
+            form.Show();
+            Hide();
         }
 
         private void transfer_button_Click(object sender, EventArgs e)
         {
+            NumberForm form = new NumberForm("Enter konto", "Enter konto", DBUtils.CARD_NUMER_LENGTH, false, (kontoForm, konto) =>
+            {
+                if (DBUtils.IsCardNumberValid(konto))
+                {
+                    NumberForm form2 = new NumberForm("Enter amount", "Enter amount",9, false, (amountForm, amount) =>
+                     {
+                         decimal decimalAmount = -1;
+                         decimal.TryParse(amount, out decimalAmount);
+                         if (db.payMoney(card, decimalAmount))
+                         {
+                             DialogResult iExit;
 
+                             iExit = MessageBox.Show("Na konto: " + konto + "\nSuma: " + amount, "ATM System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                             if (iExit == DialogResult.OK)
+                             {
+                                 Application.Exit();
+                             }
+                         }
+                     });
+                    form2.Show();
+                    kontoForm.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Nie poprawny!", "ATM System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            });
+            form.Show();
+            Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

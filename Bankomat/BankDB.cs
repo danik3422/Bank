@@ -4,28 +4,23 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Bankomat.DB
 {
     class BankDB : IBankDB
     {
-        private readonly Action<string> errorAction;
-
-        public BankDB(Action<string> errorAction)
-        {
-            this.errorAction = errorAction;
-        }
 
         public bool payMoney(CreditCard card, decimal amount)
         {
             decimal balance = getBalance(card);
-            if (balance < 0)
+            if (balance < 0 || amount < 0)
             {
                 return false;
             }
             if (amount > balance)
             {
-                errorAction("Not enough money!");
+                OnError("Not enough money!");
                 return false;
             }
             try
@@ -43,7 +38,7 @@ namespace Bankomat.DB
             }
             catch (Exception e)
             {
-                errorAction(e.Message);
+                OnError(e.Message);
                 return false;
             }
         }
@@ -53,12 +48,12 @@ namespace Bankomat.DB
         {
             if (!IsCorrectPin(card.CardNo, currentPin))
             {
-                errorAction("Incorrect Pin!");
+                OnError("Incorrect Pin!");
                 return false;
             }
             if (!DBUtils.IsPinValid(newPin))
             {
-                errorAction("New Pin is invalid");
+                OnError("New Pin is invalid");
                 return false;
             }
             try
@@ -76,9 +71,14 @@ namespace Bankomat.DB
             }
             catch (Exception e)
             {
-                errorAction(e.Message);
+                OnError(e.Message);
                 return false;
             }
+        }
+
+        private void OnError(string message)
+        {
+            MessageBox.Show(message, "ATM System", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public decimal getBalance(CreditCard card)
@@ -98,13 +98,17 @@ namespace Bankomat.DB
                             result.Read();
                             balance = DBUtils.GetBalance(result);
                         }
+                        else 
+                        {
+                            OnError("wrong card");
+                        }
                     }
                 }
             }
             catch (Exception e)
             {
                 balance = -1;
-                errorAction(e.Message);
+                OnError(e.Message);
             }
             return balance;
         }
@@ -114,12 +118,12 @@ namespace Bankomat.DB
             CreditCard card = null;
             if (!DBUtils.IsCardNumberValid(cardNo))
             {
-                errorAction("Invalid card number!");
+                OnError("Invalid card number!");
                 return card;
             }
             if (!IsCorrectPin(cardNo, pin))
             {
-                errorAction("Incorrect Pin!");
+                OnError("Incorrect Pin!");
                 return card;
             }
             try
@@ -135,18 +139,22 @@ namespace Bankomat.DB
                         {
                             card = DBUtils.CreateCard(result);
                         }
+                        else
+                        {
+                            OnError("wrong card");
+                        }
                     }
                 }
             }
             catch (Exception e)
             {
                 card = null;
-                errorAction(e.Message);
+                OnError(e.Message);
             }
             return card;
         }
 
-        private bool IsCorrectPin(string cardNo, string pin)
+        public bool IsCorrectPin(string cardNo, string pin)
         {
             if (!DBUtils.IsPinValid(pin))
             {
@@ -169,13 +177,17 @@ namespace Bankomat.DB
                             string storedPin = DBUtils.GetPin(result);
                             correctPin = pin.Equals(storedPin);
                         }
+                        else
+                        {
+                            OnError("wrong card");
+                        }
                     }
                 }
             }
             catch (Exception e)
             {
                 correctPin = false;
-                errorAction(e.Message);
+                OnError(e.Message);
             }
             return correctPin;
         }
@@ -184,7 +196,7 @@ namespace Bankomat.DB
         {
             if (!DBUtils.IsCardNumberValid(cardNo))
             {
-                errorAction("Invalid card number!");
+                OnError("Invalid card number!");
                 return false;
             }
             bool isValidNumber = false;
@@ -198,20 +210,19 @@ namespace Bankomat.DB
                         connection.Open();
                         var result = command.ExecuteReader();
                         isValidNumber = result.HasRows;
+                        if (!isValidNumber)
+                        {
+                            OnError("wrong card");
+                        }
                     }
                 }
             }
             catch (Exception e)
             {
                 isValidNumber = false;
-                errorAction(e.Message);
+                OnError(e.Message);
             }
             return isValidNumber;
-        }
-
-        public CreditCard getCreditCard(string balance)
-        {
-            throw new NotImplementedException();
         }
     }
 }

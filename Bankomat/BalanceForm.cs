@@ -15,28 +15,28 @@ namespace Bankomat
     {
 
         private readonly IBankDB db;
+        private readonly CreditCard card;
+        
 
-        public BalanceForm()
+        public BalanceForm(CreditCard card)
         {
-
             InitializeComponent();
-            
+            this.card = card;
+            db = new BankDB();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-         
-        }
+        
 
         private void BalanceForm_Load(object sender, EventArgs e)
         {
+            label2.Text = db.getBalance(card).ToString();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var formMenu = new MenuForm(card);
+            formMenu.Show();
+            Hide();
         }
     }
 }

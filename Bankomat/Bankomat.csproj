@@ -92,17 +92,11 @@
     <Compile Include="BankomatForm.Designer.cs">
       <DependentUpon>BankomatForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PINChangeForm.cs">
+    <Compile Include="NumberForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PINChangeForm.Designer.cs">
-      <DependentUpon>PINChangeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PinForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PinForm.Designer.cs">
-      <DependentUpon>PinForm.cs</DependentUpon>
+    <Compile Include="NumberForm.Designer.cs">
+      <DependentUpon>NumberForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
@@ -124,11 +118,8 @@
     <EmbeddedResource Include="BankomatForm.resx">
       <DependentUpon>BankomatForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PINChangeForm.resx">
-      <DependentUpon>PINChangeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PinForm.resx">
-      <DependentUpon>PinForm.cs</DependentUpon>
+    <EmbeddedResource Include="NumberForm.resx">
+      <DependentUpon>NumberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
